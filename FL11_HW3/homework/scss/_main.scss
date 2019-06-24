@@ -130,7 +130,7 @@ button {
 	display: inline-block;
 	font-size: map-get($fontSize, middle);
 	margin: auto;
-	font-weight: 650;
+	font-weight: 600;
 	@include position(1);
 }
 .section_card_underline {
