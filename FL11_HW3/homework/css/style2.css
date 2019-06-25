@@ -9,7 +9,7 @@ body {
 header {
   height: 900px;
   background: no-repeat url("../img/m-h-night.jpg");
-  padding-left: 190px;
+  padding-left: 166px;
   padding-top: 25px;
   border-radius: 0 0 680px/350px 0;
   font-family: "Source Sans Pro", sans-serif; }
@@ -25,7 +25,8 @@ main {
     height: 60px; }
   .landing-logo p {
     padding-left: 20px;
-    font-size: 27px; }
+    font-size: 27px;
+    font-weight: 600; }
     .landing-logo p span {
       display: block;
       font-size: 13px;
@@ -33,6 +34,7 @@ main {
 
 .header_heading {
   width: 600px;
+  margin-bottom: 0px;
   font-size: 72px;
   font-weight: bold;
   position: relative;
@@ -51,8 +53,7 @@ main {
 .header_text {
   font-size: 24px;
   font-family: "Fresca", sans-serif;
-  width: 820px;
-  height: 150px;
+  white-space: pre-line;
   color: white; }
 
 button {
