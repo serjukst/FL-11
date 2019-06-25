@@ -1,4 +1,3 @@
-// Write your styles here
 @mixin position($n) {
 	position: relative;
 	z-index: $n;
@@ -14,7 +13,7 @@ body {
 header {
 	height: 900px;
 	background: no-repeat $bgPhoto;
-	padding-left: 190px;
+	padding-left: 166px;
 	padding-top: 25px;
 	border-radius: 0 0 680px/350px 0;
 	font-family: $fontButtonTitle, sans-serif;
@@ -32,6 +31,7 @@ main {
 		p {
 			padding-left: 20px;
 			font-size: map-get($fontSize, large);
+			font-weight: 600;
 			span {
 				display: block;
 				font-size: map-get($fontSize, small);
@@ -43,6 +43,7 @@ main {
 .header_heading {
 	
 	width: 600px;
+	margin-bottom: 0px;
 	font-size: map-get($fontSize, extraLarge);
 	font-weight: bold;
 	@include position(1);
@@ -59,8 +60,9 @@ main {
 .header_text {
 	font-size: map-get($fontSize, middle);
 	font-family: $fontMain, sans-serif;
-	width: 820px;
-	height: 150px;
+//	width: 820px;
+//	height: 150px;
+	white-space: pre-line;
 	color: $headerTextColor;
 }
 button {
@@ -171,7 +173,6 @@ button {
 			transform:translate(120px, -15px);
 			@include position(-1);
 		}
-
 		.section_banner_text {
 			color: $colorCardText;
 		}
@@ -187,7 +188,6 @@ button {
     	align-items: center;
     	width: 1600px;
     	padding-top: 100px;
-
 	}
 	.footer-cr {
 		display: block;
