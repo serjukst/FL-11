@@ -7,10 +7,10 @@ if (login === null || login === '') {
     alert('Canceled');
 } else if (login.length < minLoginLength) {
     alert("I don't know any emails having name length less than 6 symbols");
-    
+
 } else if (login === 'user@gmail.com' || login === 'admin@gmail.com') {
     pass = prompt('Please, enter your password');
-    
+
     if (pass === null || pass === '') {
         alert('Canceled');
     } else if (login === 'user@gmail.com' && pass === 'UserPass' ||

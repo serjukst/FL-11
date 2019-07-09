@@ -15,33 +15,33 @@ while (playGame === true) {
     let rouletteNumber = Math.floor(Math.random() * rangeMathRandom);
 
     for (let attempts = 3; attempts > 0;) {
-            let userNumber = +prompt('Choose  a roulette pocket number from 0 to '+ maxRange 
-            + '\nAttempts left: ' + attempts 
+        let userNumber = +prompt('Choose  a roulette pocket number from 0 to ' + maxRange
+            + '\nAttempts left: ' + attempts
             + '\nTotal prize: ' + totalPrize + '$'
-            + '\nPossible prize on current attempt: ' + possiblePrize +'$');
-            
-            if (rouletteNumber === userNumber) {
-                totalPrize = totalPrize + possiblePrize;
-                let continuePlayGame = confirm('Congratulation, you won! Your prize is: ' + totalPrize + '$'
-                 + '\nDo you want to continue?');
+            + '\nPossible prize on current attempt: ' + possiblePrize + '$');
 
-                if (continuePlayGame === true) {
-                    maxRange = maxRange + stepRange;
-                    rangeMathRandom = rangeMathRandom + stepRange;
-                    defaultPrize = defaultPrize * multiplier;
-                    possiblePrize = defaultPrize;
-                    attempts = defaultAttempts;
-                    rouletteNumber = Math.floor(Math.random() * rangeMathRandom);
+        if (rouletteNumber === userNumber) {
+            totalPrize = totalPrize + possiblePrize;
+            let continuePlayGame = confirm('Congratulation, you won! Your prize is: ' + totalPrize + '$'
+                + '\nDo you want to continue?');
 
-                } else {
-                    break;
-                }  
+            if (continuePlayGame === true) {
+                maxRange = maxRange + stepRange;
+                rangeMathRandom = rangeMathRandom + stepRange;
+                defaultPrize = defaultPrize * multiplier;
+                possiblePrize = defaultPrize;
+                attempts = defaultAttempts;
+                rouletteNumber = Math.floor(Math.random() * rangeMathRandom);
+
             } else {
-                possiblePrize = possiblePrize/multiplier;
-                attempts--
+                break;
             }
+        } else {
+            possiblePrize = possiblePrize / multiplier;
+            attempts--
+        }
     }
-    alert('Thank you for your participation. Your prize is: ' + totalPrize +'$');
+    alert('Thank you for your participation. Your prize is: ' + totalPrize + '$');
 
     playGame = confirm('Do you want to play again?');
 }
