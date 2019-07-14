@@ -47,12 +47,22 @@ function mapArray(arr, fn) {
     return res;
 }
 
-function filterArray(arr, fn){
+function filterArray(arr, fn) {
     let res = [];
     for (let i = 0; i < arr.length; i++) {
-        if(fn(arr[i])){
-           res.push(arr[i]);
+        if (fn(arr[i])) {
+            res.push(arr[i]);
         }
     }
     return res;
+}
+
+function showFormattedDate(date) {
+    let year = date.getFullYear();
+    let monthIndex = date.getMonth()
+    let dayOfMonth = date.getDate();
+    let formatMonth = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    formatDate = formatMonth[monthIndex] + ' ' + dayOfMonth + ' ' + year;
+    result = 'Date: ' + formatDate;
+    return result;
 }
