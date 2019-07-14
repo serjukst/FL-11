@@ -66,3 +66,11 @@ function showFormattedDate(date) {
     result = 'Date: ' + formatDate;
     return result;
 }
+/*
+var today = new Date().toLocaleDateString('en-GB', {  
+	day : 'numeric',
+	month : 'short',
+	year : 'numeric'
+})
+https://www.toptal.com/software/definitive-guide-to-datetime-manipulation
+*/
