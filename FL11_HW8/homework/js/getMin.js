@@ -1,8 +1,10 @@
 function getMin () {
-    let args = [];
+    let minNumber = Infinity;
     for (var i = 0; i < arguments.length; i++) {
-      args[i] = arguments[i];
+      if (arguments[i] < minNumber) {
+        minNumber = arguments[i];
+      }
     }
-    return Math.min.apply(null, args);
+    return minNumber;
 }
 getMin();
