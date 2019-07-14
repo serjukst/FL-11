@@ -18,14 +18,41 @@ function findTypes() {
     for (let i = 0; i < arguments.length; i++) {
         if (typeof arguments[i] === 'number') {
             countNumber += 1;
+            result.Number = countNumber;
         } else if (typeof arguments[i] === 'string') {
             countString += 1;
+            result.String = countString;
         } else if (typeof arguments[i] === 'boolean') {
             countBoolen += 1;
+            result.Boolen = countBoolen;
         } else {
             countObject += 1;
+            result.Object = countObject;
         }
     }
-    result = { Object: countObject, Number: countNumber, String: countString, Boolen: countBoolen }
     return result;
+}
+
+function executeforEach(arr, fn) {
+    for (let i = 0; i < arr.length; i++) {
+        fn(arr[i]);
+    }
+}
+
+function mapArray(arr, fn) {
+    let res = [];
+    for (let i = 0; i < arr.length; i++) {
+        res.push(fn(arr[i]));
+    }
+    return res;
+}
+
+function filterArray(arr, fn){
+    let res = [];
+    for (let i = 0; i < arr.length; i++) {
+        if(fn(arr[i])){
+           res.push(arr[i]);
+        }
+    }
+    return res;
 }
