@@ -94,7 +94,7 @@ function daysBetween(data1, data2) {
     return Math.ceil(microSecondsDiff / (msecs * seconds * seconds * hours));
 }
 
-//Task 8;
+//Task 8!!;
 
 function getAmountOfAdultPeople(data) {
     const daysFor18Years = 6573;
