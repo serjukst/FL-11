@@ -13,11 +13,11 @@ function getNumber(str) {
 //Task 1;
 
 function findTypes() {
-    let result = {};
-    let countObject = 0;
-    let countNumber = 0;
-    let countString = 0;
-    let countBoolen = 0;
+    let result = {},
+        countObject = 0,
+        countNumber = 0,
+        countString = 0,
+        countBoolen = 0;
 
     for (let i = 0; i < arguments.length; i++) {
         if (typeof arguments[i] === 'number') {
@@ -48,23 +48,23 @@ function executeforEach(arr, fn) {
 //Task 3;
 
 function mapArray(arr, fn) {
-    let res = [];
-    for (let i = 0; i < arr.length; i++) {
-        res.push(fn(arr[i]));
-    }
-    return res;
+    let result = [];
+    executeforEach(arr, function (el) {
+        result.push(fn(el));
+    });
+    return result;
 }
 
 //Task 4;
 
 function filterArray(arr, fn) {
-    let res = [];
-    for (let i = 0; i < arr.length; i++) {
-        if (fn(arr[i])) {
-            res.push(arr[i]);
+    let result = [];
+    executeforEach(arr, function (el) {
+        if (fn(el)) {
+            result.push(el);
         }
-    }
-    return res;
+    });
+    return result;
 }
 
 //Task 5;
@@ -74,28 +74,14 @@ function showFormattedDate(date) {
     let monthIndex = date.getMonth()
     let dayOfMonth = date.getDate();
     let formatMonth = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    let formatDate = 'Date: ' + formatMonth[monthIndex] + ' ' + dayOfMonth + ' ' + year;
-    return formatDate;
-    /*let options = {
-            month : 'short',
-            day : 'numeric',
-            year : 'numeric'
-        }
-        return 'Date: ' + date.toLocaleString('en-GB', options)
-    */
+    return `Date: ${formatMonth[monthIndex]} ${dayOfMonth} ${year}`;
 }
-
-//https://www.toptal.com/software/definitive-guide-to-datetime-manipulation
 
 //Task 6;
 
 function canConvertToDate(date) {
     let check = new Date(date).toString();
-    if (check === 'Invalid Date') {
-        return false;
-    } else {
-        return true;
-    }
+    return check !== 'Invalid Date';
 }
 
 //Task 7;
@@ -104,11 +90,8 @@ function daysBetween(data1, data2) {
     const msecs = 1000;
     const seconds = 60;
     const hours = 24;
-    let convertData1 = data1.getTime();
-    let convertData2 = data2.getTime();
-    let microSecondsDiff = Math.abs(convertData1 - convertData2);
-    let daysDiff = Math.floor(microSecondsDiff / (msecs * seconds * seconds * hours));
-    return daysDiff;
+    let microSecondsDiff = Math.abs(data1.getTime() - data2.getTime());
+    return Math.ceil(microSecondsDiff / (msecs * seconds * seconds * hours));
 }
 
 //Task 8;
@@ -130,54 +113,24 @@ function getAmountOfAdultPeople(data) {
 
 //Task 9;
 
-function getKeys(obj) {
+function keys(obj) {
     let result = [];
-    for (prop in obj) {
-        result.push(prop);
-    } 
+    for (let prop in obj) {
+        if (obj.hasOwnProperty(prop)) {
+            result.push(prop);
+        }
+    }
     return result;
-
 }
-/*
-// From https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
-if (!Object.keys) {
-  Object.keys = (function() {
-    'use strict';
-    var hasOwnProperty = Object.prototype.hasOwnProperty,
-        hasDontEnumBug = !({ toString: null }).propertyIsEnumerable('toString'),
-        dontEnums = [
-          'toString',
-          'toLocaleString',
-          'valueOf',
-          'hasOwnProperty',
-          'isPrototypeOf',
-          'propertyIsEnumerable',
-          'constructor'
-        ],
-        dontEnumsLength = dontEnums.length;
 
-    return function(obj) {
-      if (typeof obj !== 'object' && (typeof obj !== 'function' || obj === null)) {
-        throw new TypeError('Object.keys called on non-object');
-      }
+//Task 10;
 
-      var result = [], prop, i;
-
-      for (prop in obj) {
-        if (hasOwnProperty.call(obj, prop)) {
-          result.push(prop);
+function values(obj) {
+    let result = [];
+    for (let prop in obj) {
+        if (obj.hasOwnProperty(prop)) {
+            result.push(obj[prop]);
         }
-      }
-
-      if (hasDontEnumBug) {
-        for (i = 0; i < dontEnumsLength; i++) {
-          if (hasOwnProperty.call(obj, dontEnums[i])) {
-            result.push(dontEnums[i]);
-          }
-        }
-      }
-      return result;
-    };
-  }());
+    }
+    return result;
 }
-*/
