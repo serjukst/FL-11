@@ -1,6 +1,6 @@
 //Task 0;
 
-function getNumber(str) {
+function getNumbers(str) {
     let result = [];
     for (let i = 0; i < str.length; i++) {
         if (!isNaN(parseInt(str[i]))) {
@@ -94,22 +94,18 @@ function daysBetween(data1, data2) {
     return Math.ceil(microSecondsDiff / (msecs * seconds * seconds * hours));
 }
 
-//Task 8!!;
+//Task 8;
 
 function getAmountOfAdultPeople(data) {
-    const daysFor18Years = 6573;
+    const daysFor18Years = 6574;
     let nowDate = new Date();
-    let countAdultPeople = 0;
-    for (let i = 0; i < data.length; i++) {
-        let birthDay = new Date(data[i].birthday);
-        let checkDay = daysBetween(nowDate, birthDay);
-        if (checkDay > daysFor18Years) {
-            countAdultPeople += 1;
-        }
-    }
-
-    return countAdultPeople;
+    let arr = filterArray(data, function (el) {
+        let birthday = new Date(el.birthday);
+        return daysBetween(birthday, nowDate) >= daysFor18Years;
+    });
+    return arr.length;
 }
+
 
 //Task 9;
 
