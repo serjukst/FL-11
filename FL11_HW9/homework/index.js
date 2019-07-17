@@ -17,7 +17,8 @@ function findTypes() {
         countObject = 0,
         countNumber = 0,
         countString = 0,
-        countBoolen = 0;
+        countBoolen = 0,
+        countUndefined = 0;
 
     for (let i = 0; i < arguments.length; i++) {
         if (typeof arguments[i] === 'number') {
@@ -29,6 +30,9 @@ function findTypes() {
         } else if (typeof arguments[i] === 'boolean') {
             countBoolen += 1;
             result.Boolen = countBoolen;
+        }else if (typeof arguments[i] === 'undefined') {
+            countUndefined += 1;
+            result.Undefined = countUndefined;
         } else {
             countObject += 1;
             result.Object = countObject;
