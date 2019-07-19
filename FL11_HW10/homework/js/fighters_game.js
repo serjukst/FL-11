@@ -1,6 +1,7 @@
 class Fighter {
     constructor(prop) {
         const NUM_100 = 100;
+        const maxHeath = prop.hp;
         let countWins = 0;
         let countLosses = 0;
         this.getName = () => prop.name;
@@ -18,7 +19,7 @@ class Fighter {
         };
         this.logCombatHistory = () => console.log(`Name: ${prop.name}, Wins: ${countWins}, Losses: ${countLosses}`);
         this.heal = (healthPoint) => {
-            prop.hp + healthPoint > NUM_100 ? prop.hp = NUM_100 : prop.hp += healthPoint;
+            prop.hp + healthPoint > maxHeath ? prop.hp = maxHeath : prop.hp += healthPoint;
         };
         this.dealDamage = (damagePoint) => {
             prop.hp - damagePoint < 0 ? prop.hp = 0 : prop.hp -= damagePoint;
@@ -42,13 +43,13 @@ function battle(warior1, warior2) {
 ${warior2.getName()} has ${warior2.getHealth()} health`);
 
         if (warior1.getHealth()) {
-            warior2.addWin();
-            warior1.addloss();
-            console.log(`${warior2.getName()} is winner.Congratulations!`);
-        } else {
             warior1.addWin();
             warior2.addloss();
             console.log(`${warior1.getName()} is winner.Congratulations!`);
+        } else {
+            warior2.addWin();
+            warior1.addloss();
+            console.log(`${warior2.getName()} is winner.Congratulations!`);
         }
     }
 }
