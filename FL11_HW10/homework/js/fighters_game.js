@@ -8,11 +8,11 @@ class Fighter {
         this.getDamage = () => prop.damage;
         this.getAgility = () => prop.agility;
         this.getHealth = () => prop.hp;
-        this.attack = (warior2) => {
-            let agilityWarior = warior2.getAgility(this.getAgility()) / NUM_100;
-            if (Math.random() > agilityWarior) {
-                warior2.dealDamage(this.getDamage());
-                console.log(`${this.getName()} make ${this.getDamage()} damage to ${warior2.getName()}`)
+        this.attack = (warrior2) => {
+            let agilitywarrior = warrior2.getAgility(this.getAgility()) / NUM_100;
+            if (Math.random() > agilitywarrior) {
+                warrior2.dealDamage(this.getDamage());
+                console.log(`${this.getName()} make ${this.getDamage()} damage to ${warrior2.getName()}`)
             } else {
                 console.log(`${this.getName()} attacked missed`);
             }
@@ -29,27 +29,31 @@ class Fighter {
     }
 }
 
-function battle(warior1, warior2) {
-    if (!warior1.getHealth()) {
-        console.log(`${warior1.getName()} is dead and can't fight.`);
-    } else if (!warior2.getHealth()) {
-        console.log(`${warior2.getName()} is dead and can't fight.`);
-    } else {
-        while (warior1.getHealth() > 0 && warior2.getHealth() > 0) {
-            warior1.attack(warior2);
-            warior2.attack(warior1);
-        }
-        console.log(`${warior1.getName()} has ${warior1.getHealth()} health 
-${warior2.getName()} has ${warior2.getHealth()} health`);
+function battle(warrior1, warrior2) {
+    if (!warrior1.getHealth()) {
+        console.log(`${warrior1.getName()} is dead and can't fight.`);
 
-        if (warior1.getHealth()) {
-            warior1.addWin();
-            warior2.addloss();
-            console.log(`${warior1.getName()} is winner.Congratulations!`);
+    } else if (!warrior2.getHealth()) {
+        console.log(`${warrior2.getName()} is dead and can't fight.`);
+
+    } else {
+        while (warrior1.getHealth() > 0 && warrior2.getHealth() > 0) {
+            warrior1.attack(warrior2);
+            warrior2.attack(warrior1);
+        }
+
+        console.log(`${warrior1.getName()} has ${warrior1.getHealth()} health 
+${warrior2.getName()} has ${warrior2.getHealth()} health`);
+
+        if (warrior1.getHealth()) {
+            warrior1.addWin();
+            warrior2.addloss();
+            console.log(`${warrior1.getName()} is winner.Congratulations!`);
+            
         } else {
-            warior2.addWin();
-            warior1.addloss();
-            console.log(`${warior2.getName()} is winner.Congratulations!`);
+            warrior2.addWin();
+            warrior1.addloss();
+            console.log(`${warrior2.getName()} is winner.Congratulations!`);
         }
     }
 }
