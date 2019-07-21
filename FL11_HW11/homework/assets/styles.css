@@ -1,2 +1,50 @@
-/* Your styles goes here */
 
+* {
+    box-sizing: border-box;
+  }
+ul {
+    margin: 0;
+    padding: 0;
+}
+body {
+    margin: 0 auto;
+    max-width: 1200px;
+    color: lightskyblue;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+h1 {
+    text-align: center;
+}
+.input-block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    border-bottom: 5px solid lightblue;
+}
+
+.task-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-block input {
+    width: 90%;
+    height: 50px;
+}
+
+#add-new-action {
+    color: lightgray;
+    font-size: 50px;
+}
+
+li {
+    list-style-type: none;
+}
+#error {
+    display: none;
+}
