@@ -1,3 +1,4 @@
+const maxNumberTask = 11;
 let addButton = document.getElementById('add');
 addButton.disabled = true;
 let taskList = document.getElementById('task-list');
@@ -8,6 +9,7 @@ inputTask.addEventListener('input', () => {
 
 function createNewTask(task) {
   let listItem = document.createElement('li');
+  listItem.setAttribute('draggable', true);
   let checkBox = document.createElement('button')
   checkBox.className = 'material-icons checkbox';
   checkBox.innerHTML = '<i class="material-icons">check_box_outline_blank</i>'
@@ -35,7 +37,7 @@ function createNewTask(task) {
 }
 
 function addTask() {
-  if (taskList.children.length < 11) {
+  if (taskList.children.length < maxNumberTask) {
     let newTask = createNewTask(inputTask.value);
     taskList.appendChild(newTask);
     inputTask.value = '';
@@ -54,7 +56,7 @@ addButton.onclick = addTask;
 
 function deleteTask() {
   let listItem = this.parentNode;
-  ul = listItem.parentNode;
+  let ul = listItem.parentNode;
   ul.removeChild(listItem);
   let err = document.getElementById('error');
   err.style = 'display: none';
@@ -75,6 +77,7 @@ function editTask() {
     input.value = label.innerText;
     editBtn.className = 'material-icons save';
     editBtn.innerHTML = '<i class="material-icons">save</i>';
+
   }
   listItem.classList.toggle('editMode');
 }
@@ -86,3 +89,12 @@ function finishTask() {
   checkBox.innerHTML = '<i class="material-icons">check_box</i>'
 
 }
+function dragStart() {
+  this.style.color = 'red';
+}
+let listItem = document.querySelectorAll('li');
+[].forEach.call(listItem, function(el) {
+  el.addEventListener('dragstart', dragStart, false);
+});
+
+console.log(listItem);

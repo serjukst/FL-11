@@ -18,6 +18,7 @@ body {
 h1 {
     text-align: center;
 }
+
 .input-block {
     display: flex;
     flex-direction: row;
@@ -37,14 +38,45 @@ h1 {
     height: 50px;
 }
 
-#add-new-action {
-    color: lightgray;
-    font-size: 50px;
-}
 
 li {
     list-style-type: none;
+    font-size: 30px;
+    display: flex;
+    flex-direction: row;
 }
 #error {
     display: none;
+}
+button {
+    border: none;
+    background: none;
+}
+
+#add .material-icons {
+    font-size: 50px;
+    color: default;
+}
+.editMode .checkbox, .editMode .delete, .editMode label {
+    display: none;
+}
+#task-list input {
+    display: none;
+}
+#task-list .editMode input {
+    display: inline;
+}
+#task-list i {
+    color: lightskyblue;
+    font-size: 35px;
+}
+li .delete {
+    position: absolute;
+    left: 75%;
+}
+#error {
+    text-align: center;
+    color: black;
+    padding: 0 0;
+    margin: 0;
 }
