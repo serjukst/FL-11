@@ -7,16 +7,30 @@ ul {
     padding: 0;
 }
 body {
-    margin: 0 auto;
     max-width: 1200px;
+    margin: 0 auto;
     color: lightskyblue;
 }
+
+button {
+    border: none;
+    background: none;
+}
+
+input { font-size: 20px; }
+
 .wrapper {
     display: flex;
     flex-direction: column;
 }
-h1 {
+h1 { text-align: center; }
+
+#error {
+    display: none;
     text-align: center;
+    color: black;
+    padding: 0 0;
+    margin: 0;
 }
 
 .input-block {
@@ -28,55 +42,42 @@ h1 {
     border-bottom: 5px solid lightblue;
 }
 
-.task-list {
-    display: flex;
-    justify-content: space-between;
-}
-
 .input-block input {
     width: 90%;
     height: 50px;
 }
 
+#add { width: 10%; }
+
+#add .material-icons { font-size: 50px; }
 
 li {
-    list-style-type: none;
-    font-size: 30px;
     display: flex;
     flex-direction: row;
-}
-#error {
-    display: none;
-}
-button {
-    border: none;
-    background: none;
+    align-items: center;
+    list-style-type: none;
+    font-size: 24px;
 }
 
-#add .material-icons {
-    font-size: 50px;
-    color: default;
+.editMode .checkbox, 
+.editMode .delete, 
+.editMode label, 
+#task-list input { 
+    display: none; 
 }
-.editMode .checkbox, .editMode .delete, .editMode label {
-    display: none;
-}
-#task-list input {
-    display: none;
-}
+
 #task-list .editMode input {
-    display: inline;
+    display: inline-block;
+    width: 30%;
 }
+
 #task-list i {
-    color: lightskyblue;
     font-size: 35px;
+    color: lightskyblue;
 }
+
 li .delete {
     position: absolute;
-    left: 75%;
+    left: 77%;
 }
-#error {
-    text-align: center;
-    color: black;
-    padding: 0 0;
-    margin: 0;
-}
+#task-list .checkbox i { color: grey; } 
