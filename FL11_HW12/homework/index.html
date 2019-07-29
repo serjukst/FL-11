@@ -6,8 +6,29 @@
   <link rel="stylesheet" href="./assets/styles.css">
 </head>
 <body>
-  <div id="root"></div>
+  <div id="root">
+    <div id="main" class="page">
+      <h1>Simple TODO application</h1>
+      <button id="add-task">Add new task</button>
+      <h2 id="todo-list-header">TODO is empty</h2>
+      <ul id="list">
+        <li class="task" >sraka</li>
 
+      </ul>
+    </div>
+    <div id="add-new-item" class="page">
+      <h2>Add task</h2>
+      <input type="text" id="new-task">
+      <button id="cancel">Cancel</button>
+      <button id="save">Save changes</button>
+    </div>
+    <div id="modify" class="page">
+      <h2>Modify item</h2>
+      <input type="text" id="modify-task">
+      <button id="cancel-modify">Cancel</button>
+      <button id="save-modify">Save changes</button>
+    </div>
+  </div>
   <script src="./src/app.js"></script>
 </body>
 </html>
