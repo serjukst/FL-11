@@ -15,3 +15,9 @@
 .who-buy-token {
     height: 500px;
 }
+.sticky-top {
+    position: sticky;
+}
+.img-logo {
+height: 60px;
+}
