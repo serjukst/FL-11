@@ -1,0 +1,17 @@
+.jumbotron {
+    background: url('../img/black-friday-buy-credit-card-34577.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 0;
+    padding: 0;
+}
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    padding: 5rem 3rem;
+    color: #fff;
+}
+.who-buy-token {
+    height: 500px;
+}
