@@ -5,6 +5,7 @@
     border-radius: 0;
     padding: 0;
 }
+
 .overlay {
     background-color: rgba(0, 0, 0, 0.5);
     height: 100%;
@@ -12,12 +13,23 @@
     padding: 5rem 3rem;
     color: #fff;
 }
+
 .who-buy-token {
     height: 500px;
 }
+
 .sticky-top {
     position: sticky;
 }
+
 .img-logo {
-height: 60px;
+    height: 60px;
+}
+
+.opasity {
+    background-color: rgba(255, 255, 255, 0.7)
+}
+
+.full-screen {
+    height: 90vh !important;
 }
